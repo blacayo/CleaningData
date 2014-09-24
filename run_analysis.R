@@ -59,10 +59,10 @@ TidyData<-function(){
        filter_data_merge<-subset(data_merge,select = c(1,2,3,4,5,6,41,42,43,44,45,46,81,82,83,84,85,86,121,122,123,124,125,126,161,162,163,164,165,166,201,202,214,215,227,228,240,241,253,254,266,267,268,269,270,271,345,346,347,348,349,350,424,425,426,427,428,429,503,504,516,517,529,530,542,543,563,564))
       
        ##Takes the filtered data frame and creates the new grouped data frame with the mean calculation by column
-       ##data_final<- ddply(filter_data_merge, .("Volunteer Subject ID","Activity ID"),numcolwise(mean))
+       data_final<- ddply(filter_data_merge, .("Volunteer Subject ID","Activity ID"),numcolwise(mean))
        
        ##Extracts the final data set into a txt file to then be loaded for the project work
-       ##write.table(data_final, "data_final.txt", sep="\t",row.names= FALSE)
+       write.table(data_final, "data_final.txt", sep="\t",row.names= FALSE)
        
        
 }
